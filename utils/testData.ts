@@ -15,5 +15,10 @@ export const testData = {
   searchEmployee: {
     validName: 'David',
     invalidName: 'XYZNONEXISTENT123'
+  },
+  leave: {
+    type: 'CAN - FMLA',
+    fromDate: '2026-08-01',
+    toDate: '2026-08-01'
   }
 };

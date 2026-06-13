@@ -37,4 +37,24 @@ test.describe('OrangeHRM Login Tests', () => {
     console.log('✅ Validation message shown');
   });
 
+  test('TC_004 - Verify dashboard loads after login', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.goto();
+    await loginPage.login(
+      testData.adminUser.username,
+      testData.adminUser.password
+    );
+    await expect(page).toHaveURL(/dashboard/);
+    await expect(page.locator('.oxd-topbar-header-title')).toBeVisible();
+    console.log('✅ Dashboard loaded successfully after login');
+  });
+
+  test('TC_005 - Verify login page title', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.goto();
+    const title = await page.title();
+    expect(title).toContain('OrangeHRM');
+    console.log('✅ Login page title verified');
+  });
+
 });

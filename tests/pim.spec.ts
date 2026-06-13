@@ -47,4 +47,26 @@ test.describe('OrangeHRM PIM Tests', () => {
     console.log('✅ Employee list loaded with records');
   });
 
+  test('TC_007 - Verify Add Employee page loads', async ({ page }) => {
+    const pimPage = new PIMPage(page);
+    await pimPage.goto();
+    await pimPage.clickAddEmployee();
+    await expect(page).toHaveURL(/addEmployee/);
+    await expect(
+      page.getByRole('button', { name: 'Save' })
+    ).toBeVisible();
+    console.log('✅ Add Employee page loaded with Save button');
+  });
+
+  test('TC_008 - Verify employee list has records', async ({ page }) => {
+    const pimPage = new PIMPage(page);
+    await pimPage.goto();
+    await page.waitForTimeout(2000);
+    const recordsText = await page.locator(
+      '.orangehrm-horizontal-padding'
+    ).innerText();
+    expect(recordsText).toContain('Records Found');
+    console.log('✅ Employee list has records');
+  });
+
 });
