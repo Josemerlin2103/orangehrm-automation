@@ -8,7 +8,8 @@ A professional End-to-End automation framework for OrangeHRM — a real enterpri
 
 - **Page Object Model (POM)** — Modular and maintainable structure
 - **Data Driven Testing** — Centralized test data in TypeScript
-- **16 Test Cases** across 3 modules
+- **18 Test Cases** across 4 modules
+- **AI-Powered Visual Testing** — Applitools Eyes integration for visual regression testing
 - **CI/CD** — GitHub Actions auto-runs tests on every push
 - **Screenshot and Video** — Auto-captured on test failure
 
@@ -17,6 +18,7 @@ A professional End-to-End automation framework for OrangeHRM — a real enterpri
 - **Framework:** Playwright
 - **Language:** TypeScript
 - **Pattern:** Page Object Model
+- **AI Visual Testing:** Applitools Eyes
 - **CI/CD:** GitHub Actions
 - **Reporting:** HTML Report + Trace Viewer
 
@@ -28,6 +30,7 @@ A professional End-to-End automation framework for OrangeHRM — a real enterpri
 - tests/login.spec.ts
 - tests/pim.spec.ts
 - tests/leave.spec.ts
+- tests/visual.spec.ts
 - utils/testData.ts
 - .github/workflows/playwright.yml
 
@@ -38,7 +41,8 @@ A professional End-to-End automation framework for OrangeHRM — a real enterpri
 | Login | 5 tests |
 | PIM Employee Management | 6 tests |
 | Leave Management | 5 tests |
-| Total | 16 tests |
+| Visual AI Testing (Applitools) | 2 tests |
+| Total | 18 tests |
 
 ## ▶️ How to Run
 
